@@ -196,7 +196,7 @@ interface FastImageStaticProperties {
     resizeMode: typeof resizeMode
     priority: typeof priority
     cacheControl: typeof cacheControl
-    preload: (sources: Source[]) => void
+    preload: (sources: Source[]) => Promise<boolean>
 }
 
 const FastImage: React.ComponentType<FastImageProps> &
