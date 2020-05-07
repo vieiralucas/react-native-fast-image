@@ -86,10 +86,11 @@ class FastImageViewModule extends ReactContextBaseJavaModule {
 
         @Override
         public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
-            int loadedAmount = resourcesLoaded.incrementAndGet();
-            if (loadedAmount == resourcesAmount) {
+            if (resourcesLoaded.incrementAndGet() == resourcesAmount) {
                 promise.resolve(true);
             }
+
+            return false;
         }
     }
 }
